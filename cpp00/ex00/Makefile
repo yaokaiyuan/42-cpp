@@ -6,37 +6,37 @@
 #    By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/04 18:44:45 by ykai-yua          #+#    #+#              #
-#    Updated: 2025/02/04 18:46:00 by ykai-yua         ###   ########.fr        #
+#    Updated: 2025/02/04 18:58:33 by ykai-yua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Makefile for megaphone.cpp
 
 # Compiler
-CXX = g++
+CC = c++
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -std=c++98
+CCFLAGS = -Wall -Wextra -std=c++98
 
 # Source file
 SRC = megaphone.cpp
 
 # Executable name
-TARGET = megaphone
+NAME = megaphone
 
 # Default target
-all: $(TARGET)
+all: $(NAME)
 
 # Link the object file to create the executable
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
+$(NAME): $(SRC)
+	$(CC) $(CCFLAGS) $(SRC) -o $(NAME)
 
 # Clean up build files
 clean:
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
 # Run the program
-run: $(TARGET)
-	./$(TARGET)
+run: $(NAME)
+	./$(NAME)
 
 .PHONY: all clean run
