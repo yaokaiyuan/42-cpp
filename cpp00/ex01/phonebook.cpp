@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <sstream>
 
 PhoneBook::PhoneBook() : contactCount(0) {}
 
@@ -11,7 +12,6 @@ void PhoneBook::addContact() {
         contacts[contactCount].setContactInfo();
         contactCount++;
     } else {
-        // 替换最旧的联系人
         std::cout << "PhoneBook is full. Replacing the oldest contact." << std::endl;
         for (int i = 1; i < 8; i++) {
             contacts[i - 1] = contacts[i];
@@ -34,34 +34,31 @@ void PhoneBook::searchContacts() const {
     }
 
     if (contactCount == 0) {
-        std::cout << "No contacts available." << std::endl; // 如果没有联系人，打印提示信息
+        std::cout << "No contacts available." << std::endl;
         return;
     }
 
     int index;
     std::cout << "Enter index to display contact: ";
-
-    // 读取输入并检查是否成功
     while (true) {
-        if (!(std::cin >> index)) {
-            std::cin.clear(); // 清除错误标志
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 清空输入缓冲区
-            std::cout << "Invalid input. Please enter a number." << std::endl;
-            std::cout << "Enter index to display contact: "; // 重新提示用户输入
-            continue; // 继续循环，等待有效输入
+        std::string input;
+        std::getline(std::cin, input);
+        if (input.empty()) {
+        std::cout << "Enter index to display contact: ";
+        continue;
         }
-
-        // 检查输入的索引是否在有效范围内
+        std::istringstream iss(input);
+        if (!(iss >> index)) {
+            std::cout << "Invalid input. Please enter a number." << std::endl;
+            std::cout << "Enter index to display contact: ";
+            continue;
+        }
         if (index < 0 || index >= contactCount) {
             std::cout << "Invalid index. Please enter a number between 0 and " << contactCount - 1 << "." << std::endl;
-            std::cout << "Enter index to display contact: "; // 重新提示用户输入
-            std::cin.clear(); // 清除错误标志
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 清空输入缓冲区
-            continue; // 继续循环，等待有效输入
+            std::cout << "Enter index to display contact: ";
+            continue;
         }
-
-        std::cin.ignore(); // 清除输入缓冲区中的换行符
-        contacts[index].displayContact(); // 显示联系人信息
-        break; // 退出循环
+        contacts[index].displayContact();
+        break;
     }
 }
