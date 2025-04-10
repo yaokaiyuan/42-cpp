@@ -3,21 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ykai-yua <ykai-yua@student.42.fr>          +#+  +:+       +#+         #
+#    By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/08 15:53:41 by ykai-yua          #+#    #+#              #
-#    Updated: 2025/04/08 15:53:44 by ykai-yua         ###   ########.fr        #
+#    Created: 2025/04/08 19:39:11 by ykai-yua          #+#    #+#              #
+#    Updated: 2025/04/08 19:40:01 by ykai-yua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = zombie
 
 CC = c++
 
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = contact.cpp \
-		phonebook.cpp \
+SRCS = Zombie.cpp \
+		zombieHorde.cpp \
 		main.cpp
 
 OBJ = $(SRCS:.cpp=.o)

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ykai-yua <ykai-yua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 15:53:37 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/08 15:53:39 by ykai-yua         ###   ########.fr       */
+/*   Created: 2025/04/08 19:08:09 by ykai-yua          #+#    #+#             */
+/*   Updated: 2025/04/08 19:08:11 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Zombie.hpp"
 
-#include "phonebook.hpp"
-
-void runPhoneBook();
-
-#endif
+Zombie* newZombie(std::string name) {
+    Zombie* zombie = new Zombie(name);
+    return zombie;
+}

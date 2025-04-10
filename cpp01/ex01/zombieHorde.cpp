@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ykai-yua <ykai-yua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/08 15:53:37 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/08 15:53:39 by ykai-yua         ###   ########.fr       */
+/*   Created: 2025/04/10 13:11:39 by ykai-yua          #+#    #+#             */
+/*   Updated: 2025/04/10 13:11:42 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "Zombie.hpp"
 
-#include "phonebook.hpp"
-
-void runPhoneBook();
-
-#endif
+Zombie* zombieHorde(int N, std::string name) {
+    Zombie* horde = new Zombie[N];
+    
+    for (int i = 0; i < N; i++) {
+        horde[i].setName(name);
+    }
+    
+    return horde;
+}

@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ykai-yua <ykai-yua@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/08 15:53:41 by ykai-yua          #+#    #+#              #
-#    Updated: 2025/04/08 15:53:44 by ykai-yua         ###   ########.fr        #
+#    Created: 2025/04/08 16:16:04 by ykai-yua          #+#    #+#              #
+#    Updated: 2025/04/08 16:18:49 by ykai-yua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = zombie
 
 CC = c++
 
 CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = contact.cpp \
-		phonebook.cpp \
+SRCS = Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 		main.cpp
 
 OBJ = $(SRCS:.cpp=.o)
