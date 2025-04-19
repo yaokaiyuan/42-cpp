@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 16:44:44 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 16:44:46 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:02:53 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ public:
     
     // Destructor
     ~ScavTrap();
+
+	// Copy constructor
+    ScavTrap(const ScavTrap& other);
+
+    // Copy assignment operator
+    ScavTrap& operator=(const ScavTrap& other);
 
     // Overridden attack function
     void attack(const std::string& target);

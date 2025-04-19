@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:37:28 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 17:37:31 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:10:31 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
 
 FragTrap::~FragTrap() {
     std::cout << "FragTrap " << name << " destroyed." << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
+    std::cout << "FragTrap " << name << " copied." << std::endl;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+    }
+    std::cout << "FragTrap " << name << " assigned." << std::endl;
+    return *this;
 }
 
 void FragTrap::highFivesGuys() {

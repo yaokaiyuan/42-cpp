@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:37:13 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 17:37:16 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:06:59 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,21 @@ ClapTrap::ClapTrap(const std::string& name) : name(name), hitPoints(10), energyP
 
 ClapTrap::~ClapTrap() {
     std::cout << "ClapTrap " << name << " destroyed." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage) {
+    std::cout << "ClapTrap " << name << " copied." << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+    if (this != &other) {
+        name = other.name;
+        hitPoints = other.hitPoints;
+        energyPoints = other.energyPoints;
+        attackDamage = other.attackDamage;
+    }
+    std::cout << "ClapTrap " << name << " assigned." << std::endl;
+    return *this;
 }
 
 void ClapTrap::attack(const std::string& target) {

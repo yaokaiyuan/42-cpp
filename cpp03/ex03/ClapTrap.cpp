@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 19:22:44 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 19:22:46 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:07:16 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ ClapTrap::ClapTrap() : name("default_clap_name"), hitPoints(10), energyPoints(10
               << hitPoints << " hit points, "
               << energyPoints << " energy points, and "
               << attackDamage << " attack damage." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage) {
+    std::cout << "ClapTrap " << name << " copied." << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
+    if (this != &other) {
+        name = other.name;
+        hitPoints = other.hitPoints;
+        energyPoints = other.energyPoints;
+        attackDamage = other.attackDamage;
+    }
+    std::cout << "ClapTrap " << name << " assigned." << std::endl;
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {

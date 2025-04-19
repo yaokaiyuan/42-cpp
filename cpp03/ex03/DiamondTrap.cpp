@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 19:22:57 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 19:23:00 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:12:55 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,21 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 
 DiamondTrap::~DiamondTrap() {
     std::cout << "DiamondTrap " << name << " destroyed." << std::endl;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), FragTrap(other), ScavTrap(other), name(other.name) {
+    std::cout << "DiamondTrap " << name << " copied." << std::endl;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+        FragTrap::operator=(other);
+        ScavTrap::operator=(other);
+        name = other.name;
+    }
+    std::cout << "DiamondTrap " << name << " assigned." << std::endl;
+    return *this;
 }
 
 void DiamondTrap::whoAmI() {

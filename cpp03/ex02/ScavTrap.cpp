@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:37:51 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 17:37:54 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:10:48 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
 
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap " << name << " destroyed." << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
+    std::cout << "ScavTrap " << name << " copied." << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
+    if (this != &other) {
+        ClapTrap::operator=(other);
+    }
+    std::cout << "ScavTrap " << name << " assigned." << std::endl;
+    return *this;
 }
 
 void ScavTrap::attack(const std::string& target) {

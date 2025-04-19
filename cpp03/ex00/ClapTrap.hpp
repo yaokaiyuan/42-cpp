@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 15:53:20 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 15:53:25 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 20:58:10 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ public:
     
     // Destructor
     ~ClapTrap();
+
+    // Copy constructor
+    ClapTrap(const ClapTrap& other);
+
+    // Copy assignment operator
+    ClapTrap& operator=(const ClapTrap& other);
 
     // Member functions
     void attack(const std::string& target);

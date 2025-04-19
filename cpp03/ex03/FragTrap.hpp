@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 19:23:19 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/04/12 19:23:21 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:14:12 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
     static const unsigned int DEFAULT_ATTACK_DAMAGE = 30;
     FragTrap(); 
     FragTrap(const std::string& name);
+	FragTrap(const FragTrap& other);
+    FragTrap& operator=(const FragTrap& other);
     virtual ~FragTrap();
     void highFivesGuys(void);
 };
