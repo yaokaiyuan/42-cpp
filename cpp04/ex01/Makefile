@@ -6,11 +6,11 @@
 #    By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/19 16:32:31 by ykai-yua          #+#    #+#              #
-#    Updated: 2025/04/21 16:08:26 by ykai-yua         ###   ########.fr        #
+#    Updated: 2025/04/21 16:46:01 by ykai-yua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sound
+NAME = Brain
 
 CC = c++
 
@@ -21,7 +21,8 @@ SRCS = main.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		WrongAnimal.cpp \
-		WrongCat.cpp
+		WrongCat.cpp \
+		Brain.cpp
 		
 
 OBJ = $(SRCS:.cpp=.o)

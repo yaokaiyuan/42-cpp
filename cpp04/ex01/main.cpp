@@ -1,0 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 16:13:15 by ykai-yua          #+#    #+#             */
+/*   Updated: 2025/04/21 17:15:58 by ykai-yua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+
+int main() {
+    std::cout << "=== Basic Construction and Destruction Test ===" << std::endl;
+    const Animal* dog = new Dog();
+    const Animal* cat = new Cat();
+    delete dog;
+    delete cat;
+
+    std::cout << "\n=== Array of Animals ===" << std::endl;
+    const int size = 4;
+    Animal* animals[size];
+
+    for (int i = 0; i < size; i++) {
+        if (i % 2 == 0)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
+    }
+
+    std::cout << "\n=== Deleting Array of Animals ===" << std::endl;
+    for (int i = 0; i < size; i++) {
+        delete animals[i];
+    }
+
+    std::cout << "\n=== Deep Copy Test ===" << std::endl;
+    Dog originalDog;
+    originalDog.setIdea(0, "Chase cats");
+    originalDog.setIdea(1, "Eat treats");
+	originalDog.setIdea(100, "run into full speed train");
+
+    Dog copyDog = originalDog;
+    copyDog.setIdea(0, "Sleep all day");
+
+    std::cout << "Original Dog Idea 0: " << originalDog.getIdea(0) << std::endl;
+	std::cout << "Original Dog Idea 1: " << originalDog.getIdea(1) << std::endl;
+	std::cout << "Original Dog Idea 100: " << originalDog.getIdea(100) << std::endl;
+    std::cout << "Copy Dog Idea 0: " << copyDog.getIdea(0) << std::endl;
+
+    return 0;
+}

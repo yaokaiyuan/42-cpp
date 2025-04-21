@@ -1,46 +1,20 @@
-#include <iostream>
-#include <string>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/21 16:13:15 by ykai-yua          #+#    #+#             */
+/*   Updated: 2025/04/21 16:13:18 by ykai-yua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class Animal {
-protected:
-    std::string type;
-public:
-    Animal() : type("Animal") { std::cout << "Animal constructor called" << std::endl; }
-    virtual ~Animal() { std::cout << "Animal destructor called" << std::endl; }
-    virtual void makeSound() const { std::cout << "Animal sound" << std::endl; }
-    std::string getType() const { return type; }
-};
-
-class Dog : public Animal {
-public:
-    Dog() { type = "Dog"; std::cout << "Dog constructor called" << std::endl; }
-    ~Dog() { std::cout << "Dog destructor called" << std::endl; }
-    void makeSound() const { std::cout << "Woof!" << std::endl; }
-};
-
-class Cat : public Animal {
-public:
-    Cat() { type = "Cat"; std::cout << "Cat constructor called" << std::endl; }
-    ~Cat() { std::cout << "Cat destructor called" << std::endl; }
-    void makeSound() const { std::cout << "Meow!" << std::endl; }
-};
-
-class WrongAnimal {
-protected:
-    std::string type;
-public:
-    WrongAnimal() : type("WrongAnimal") { std::cout << "WrongAnimal constructor called" << std::endl; }
-    virtual ~WrongAnimal() { std::cout << "WrongAnimal destructor called" << std::endl; }
-    void makeSound() const { std::cout << "WrongAnimal sound" << std::endl; }
-    std::string getType() const { return type; }
-};
-
-class WrongCat : public WrongAnimal {
-public:
-    WrongCat() { type = "WrongCat"; std::cout << "WrongCat constructor called" << std::endl; }
-    ~WrongCat() { std::cout << "WrongCat destructor called" << std::endl; }
-    void makeSound() const { std::cout << "WrongAnimal sound" << std::endl; }
-};
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main() {
     const Animal* meta = new Animal();
