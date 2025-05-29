@@ -6,7 +6,7 @@
 /*   By: ykai-yua <ykai-yua@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 15:08:41 by ykai-yua          #+#    #+#             */
-/*   Updated: 2025/05/27 22:43:15 by ykai-yua         ###   ########.fr       */
+/*   Updated: 2025/05/29 17:54:12 by ykai-yua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 int main() {
     try {
         // Test creating forms with valid grades
-        Form form1("Tax Form", 50, 30);
-        Form form2("Passport Application", 20, 10);
+        Form form1("Club Registration Form", 50, 30);
+        Form form2("Membership Application", 20, 10);
         
         // Test creating forms with invalid grades
         try {
@@ -34,19 +34,21 @@ int main() {
         }
         
         // Create bureaucrats
-        Bureaucrat highRank("High Rank", 1);
-        Bureaucrat lowRank("Low Rank", 150);
+        Bureaucrat highRank("Mr. President of student council", 1);
+		Bureaucrat midRank("Super Oat", 35);
+		Bureaucrat lowRank("Oat", 150);
         
         // Test signing forms
         std::cout << "\nTesting form signing:" << std::endl;
         std::cout << "Form1: " << form1 << std::endl;
         std::cout << "Form2: " << form2 << std::endl;
         
-        // High rank bureaucrat should be able to sign both forms
         highRank.signForm(form1);
         highRank.signForm(form2);
         
-        // Low rank bureaucrat should fail to sign form2
+		midRank.signForm(form1);
+		midRank.signForm(form2);
+        
         lowRank.signForm(form1);
         lowRank.signForm(form2);
         
