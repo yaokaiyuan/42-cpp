@@ -2,14 +2,19 @@
 #include <sstream>
 #include <cctype>
 
-RPN::RPN() {}
-RPN::RPN(const RPN& other) {}
-RPN& RPN::operator=(const RPN& other) { return *this; }
+RPN::RPN(const std::string& expr) : expr_(expr) {}
+RPN::RPN(const RPN& other) : expr_(other.expr_) {}
+RPN& RPN::operator=(const RPN& other) {
+    if (this != &other) {
+        expr_ = other.expr_;
+    }
+    return *this;
+}
 RPN::~RPN() {}
 
-int RPN::evaluate(const std::string& expr) {
+int RPN::evaluate() {
     std::stack<int> stack;
-    std::istringstream iss(expr);
+    std::istringstream iss(expr_);
     std::string token;
     while (iss >> token) {
         if (token.size() == 1 && std::isdigit(token[0])) {

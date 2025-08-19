@@ -6,13 +6,15 @@
 #include <stdexcept>
 
 class RPN {
+private:
+    std::string expr_;
 public:
-    RPN();
+    RPN(const std::string& expr);
     RPN(const RPN& other);
     RPN& operator=(const RPN& other);
     ~RPN();
     // Evaluates the RPN expression, throws std::runtime_error on error
-    static int evaluate(const std::string& expr);
+    int evaluate();
 };
 
 #endif

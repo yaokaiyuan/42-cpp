@@ -7,7 +7,8 @@ int main(int argc, char **argv) {
         return 1;
     }
     try {
-        int result = RPN::evaluate(argv[1]);
+        RPN rpn(argv[1]);
+        int result = rpn.evaluate();
         std::cout << result << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Error" << std::endl;
