@@ -13,7 +13,7 @@ public:
     RPN(const RPN& other);
     RPN& operator=(const RPN& other);
     ~RPN();
-    // Evaluates the RPN expression, throws std::runtime_error on error
+
     int evaluate();
 };
 
